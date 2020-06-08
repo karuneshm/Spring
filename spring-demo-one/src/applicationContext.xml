@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <!-- <bean id = "myCoach" class = "com.karunesh.springdemo.TrackCoach"> 
+   </bean> --> 
+   
+   <bean id = "myFortuneService" class = "com.karunesh.springdemo.HappyFortuneService"> 
+   </bean>
+   
+   <bean id = "myCoach" class = "com.karunesh.springdemo.BaseballCoach"> 
+   <constructor-arg ref="myFortuneService"/>
+   </bean>
+   
+   <bean id = "myCricketCoach" class = "com.karunesh.springdemo.CricketCoach"> 
+   <property name="fortuneService" ref="myFortuneService"></property>
+   <property name="team" value="Sunrisers Hyderbad"/>
+   <property name="emailAddress" value="bestCoach@gmail.com"/>
+   </bean>
+
+</beans>
